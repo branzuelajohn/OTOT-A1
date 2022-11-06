@@ -7,11 +7,11 @@ WORKDIR /usr/app
 
 # Install dependencies
 COPY package.json .
-COPY package-lock.json .
 RUN npm install --production --quiet
 
 # Copy source files
 COPY . .
 
 # Run the app
+EXPOSE 3000
 CMD ["npm", "start"]

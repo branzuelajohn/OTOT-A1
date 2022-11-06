@@ -1,16 +1,10 @@
-version: '3.3'
-
+version: "3.8"
 services:
-  web:
+  nodejs:
     build:
       context: ./app
-      dockerfile: Dockerfile
-    ports:
-      - '8080:8080'
-  server:
-    restart: always
-    build:
+  nginx:
+    build: 
       context: ./nginx
-      dockerfile: Dockerfile
     ports:
-      - '3000:3000'
+      - "80:80"
